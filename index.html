@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .wrapper {
+            font-family: "Open Sans", "system-ui";
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .jobrows {
+            
+        } 
+
+        .row {
+            background-color: white;
+            border-bottom: 1px solid rgb(208, 208, 208);
+            padding: 1rem 2rem;
+            color: gray;
+        }
+
+        .row:nth-child(odd){
+            background-color: rgb(249, 249, 249);
+        }
+
+        .unitRow {
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+           
+        }
+
+        .unitRow:hover {
+            background-color: rgb(205 205 205);
+        }
+
+        .unitRow img {
+            height: auto;
+            width: 40px;
+            margin: .5rem;
+        }
+
+        .unitData {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .unitData p {
+            margin: 0px;
+            white-space: nowrap;
+            overflow: hidden;
+            min-width: 20px ;
+            text-overflow: ellipsis;
+
+        }
+        .unitData p.heading {
+            font-weight: 500;
+            margin: 0 .5rem;
+        }
+
+        .unitDataGrid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        @media(max-width: 400px){
+            .unitDataGrid {
+            margin: .5rem 0;
+            grid-template-columns: 1fr;
+        }
+        }
+
+
+    </style>
+
+<body>
+    
+
+
+    <div class="wrapper">
+        <div class="jobrows">
+
+            <div class="row">
+                
+                <details>
+                    <summary>Enheter (4)</summary>
+                   
+                    <div class="unitRow"> 
+                        <img src="unitIcon.png"/>
+                        
+                        <div class="unitDataGrid">
+
+                            <div class="unitData">
+                                <p class="heading">Identitet:</p>
+                                <p class="data">Personbil 1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Modell:</p>
+                                <p class="data">Volvo XC90</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Fordonslag:</p>
+                                <p class="data">Personbil</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Artikel:</p>
+                                <p class="data">011</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Antal:</p>
+                                <p class="data">1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Pris:</p>
+                                <p class="data">5000:-</p>
+                            </div>
+                        </div>
+                            
+                    </div>    
+                    <div class="unitRow"> 
+                        <img src="unitIcon.png"/>
+                        
+                        <div class="unitDataGrid">
+
+                            <div class="unitData">
+                                <p class="heading">Identitet:</p>
+                                <p class="data">Personbil 1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Modell:</p>
+                                <p class="data">Volvo XC90</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Fordonslag:</p>
+                                <p class="data">Personbil</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Artikel:</p>
+                                <p class="data">011</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Antal:</p>
+                                <p class="data">1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Pris:</p>
+                                <p class="data">5000:-</p>
+                            </div>
+                        </div>
+                            
+                    </div>    
+                    <div class="unitRow"> 
+                        <img src="unitIcon.png"/>
+                        
+                        <div class="unitDataGrid">
+
+                            <div class="unitData">
+                                <p class="heading">Identitet:</p>
+                                <p class="data">Personbil 1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Modell:</p>
+                                <p class="data">Volvo XC90</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Fordonslag:</p>
+                                <p class="data">Personbil</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Artikel:</p>
+                                <p class="data">011</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Antal:</p>
+                                <p class="data">1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Pris:</p>
+                                <p class="data">5000:-</p>
+                            </div>
+                        </div>
+                            
+                    </div>    
+                    <div class="unitRow"> 
+                        <img src="unitIcon.png"/>
+                        
+                        <div class="unitDataGrid">
+
+                            <div class="unitData">
+                                <p class="heading">Identitet:</p>
+                                <p class="data">Personbil 1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Modell:</p>
+                                <p class="data">Volvo XC90</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Fordonslag:</p>
+                                <p class="data">Personbil</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Artikel:</p>
+                                <p class="data">011</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Antal:</p>
+                                <p class="data">1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Pris:</p>
+                                <p class="data">5000:-</p>
+                            </div>
+                        </div>
+                            
+                    </div>    
+
+
+                </details>
+            </div>
+            <div class="row">
+                <p>Telefon</p>
+            </div>
+            <div class="row">
+                <p>Betalare</p>
+            </div>
+            <div class="row">
+                <p>Data</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
