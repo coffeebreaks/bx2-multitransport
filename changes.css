@@ -1,0 +1,130 @@
+.slidemenu-main {
+    width: 100%;
+    background: linear-gradient(45deg, rgb(245, 245, 245), rgb(249, 249, 249));
+    padding: 0.5rem;
+    border-radius: 0px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    background: #e4e4e4;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    width: 10px;
+}
+
+.selectedItem {
+    min-width: 120px;
+    text-decoration: none;
+    background: white;
+    border-left: 2px solid rgb(71, 188, 244);
+    border-radius: 0px;
+    text-align: center;
+    padding: 0px 0.5rem;
+    height: 40px;
+    font-size: 0.8rem;
+    color: gray;
+    margin: 0px 0.1rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.heading {
+    /* display: flex; */
+    /* -webkit-box-align: center; */
+    /* align-items: center; */
+    /* margin-right: 2rem; */
+    /* font-size: 20px; */
+    display: none;
+    /* color: gray; */
+    /* font-weight: 400; */
+}
+
+.navbar-toggler {
+    /* padding: 0.25rem 0.75rem; */
+    /* font-size: 1.25rem; */
+    /* line-height: 1; */
+    /* background-color: transparent; */
+    /* border: 1px solid transparent; */
+    /* border-radius: 0.25rem; */
+    border: none;
+    background-color: transparent;
+}
+
+
+.job-text {
+    /* font-weight: 900; */
+    /* color: gray; */
+    font-weight: 400;
+    color: gray;
+    font-size: 15px;
+    white-space: nowrap;
+    min-width: 5ch;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-header-job.job-utils-click img {
+    padding-right: 10px;
+}
+
+.tab-header-job {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 100;
+    /* font-weight: 400; */
+    margin: 1rem 0px;
+}
+
+.job-utils-button {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+/* Karta överlappar på karta*/
+
+/* Kamera */
+
+/* Saknar rubrik "Sparade foton" */
+/* Lägg till den mindre +knappen för att ta foto */
+
+.photo-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-thumbnail-middle-text {
+    font-weight: 600;
+    color: rgb(79, 79, 79);
+    font-size: 16px;
+}
+
+/* Tidstämplar */
+
+/* denna ska ligga inline på datetime-local */
+
+/* {
+border: 1px solid rgb(230, 230, 230);
+font-size: 17px;
+font-family: "Open Sans";
+} */
+
