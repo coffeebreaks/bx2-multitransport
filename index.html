@@ -14,15 +14,12 @@
             margin: 0 auto;
         }
 
-        .jobrows {
-            
-        } 
-
         .row {
             background-color: white;
             border-bottom: 1px solid rgb(208, 208, 208);
             padding: 1rem 2rem;
             color: gray;
+            cursor: pointer;
         }
 
         .row:nth-child(odd){
@@ -31,8 +28,10 @@
 
         .unitRow {
             display: flex;
+           
             flex-flow: row;
             align-items: center;
+            cursor: pointer;
            
         }
 
@@ -47,8 +46,10 @@
         }
 
         .unitData {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            /* display: grid;
+            grid-template-columns: 1fr 1fr; */
+            display: flex;
+            flex-wrap: wrap;
         }
 
         .unitData p {
@@ -69,7 +70,7 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
 
-        @media(max-width: 400px){
+        @media(max-width: 600px){
             .unitDataGrid {
             margin: .5rem 0;
             grid-template-columns: 1fr;
@@ -77,21 +78,152 @@
         }
 
 
+        .field-heading {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+    .field-data {
+        padding: 0.5rem;
+    margin-right: 10px;
+    width: -webkit-fill-available;
+    max-width: 100%;
+    border: 1px solid rgb(175, 175, 175);
+    border-radius: 5px;
+    }
+
+    .field-data:focus {
+    background: #ffffff;
+    border: 1px solid rgb(175, 175, 175);
+    box-shadow: 0px 0px 3px 0px #0000005e;
+    outline: none;
+}
+
+
+
+
+   
+
+    .field-unitData {
+      margin-bottom: 16px;
+    }
+
+    #dialog {
+        width: 100%;
+        border: 1px solid rgb(196, 196, 196);
+    border-radius: 5px;
+    background-color: white;
+    padding: 1rem;
+    }
+
+    .update-button {
+    cursor: pointer;
+    background: rgb(138, 199, 125);
+    width: 200px;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    margin: 0px auto;
+    border-radius: 50px;
+    color: white;
+}
+
+.back {
+    margin-top: 1rem;
+    cursor: pointer;
+    color: red;
+    text-align: center;
+
+    }
+
     </style>
 
 <body>
+
+    <script>
+      
+        const dialog = document.getElementById("dialog") 
+   
+    </script>
     
 
 
     <div class="wrapper">
         <div class="jobrows">
+            <dialog id="dialog">
 
-            <div class="row">
+                <div class="field-unitData">
+                    <label class="field-heading" for="identitet">Identitet:</label>
+                    <input class="field-data" type="text" id="identitet" name="identitet" value="Personbil 1">
+                  </div>
+                  <div class="field-unitData">
+                    <label class="field-heading" for="modell">Modell:</label>
+                    <input class="field-data" type="text" id="modell" name="modell" value="Volvo XC90">
+                  </div>
+                  <div class="field-unitData">
+                    <label class="field-heading" for="fordonslag">Fordonslag:</label>
+                    <input class="field-data" type="text" id="fordonslag" name="fordonslag" value="Personbil">
+                  </div>
+                  <div class="field-unitData">
+                    <label class="field-heading" for="artikel">Artikel:</label>
+                    <input class="field-data" type="text" id="artikel" name="artikel" value="011">
+                  </div>
+                  <div class="field-unitData">
+                    <label class="field-heading" for="antal">Antal:</label>
+                    <input class="field-data" type="number" id="antal" name="antal" value="1">
+                  </div>
+                  <div class="field-unitData">
+                    <label class="field-heading" for="pris">Pris:</label>
+                    <input class="field-data" type="text" id="pris" name="pris" value="5000:-">
+                  </div>
+
+                  
+                    <div class="update-button" onClick="document.getElementById('dialog').close()">Uppdatera</div>
+                    <div class="back">Ta bort</div>
+
+
+
+
+            </dialog>
+            <div class="row" >
                 
                 <details>
                     <summary>Enheter (4)</summary>
                    
-                    <div class="unitRow"> 
+                    <div class="unitRow" onClick="document.getElementById('dialog').showModal()"> 
+                        <img src="unitIcon.png"/>
+                        
+                        <div class="unitDataGrid">
+
+                            <div class="unitData" >
+                                <p class="heading">Identitet:</p>
+                                <p class="data">Personbil 1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Modell:</p>
+                                <p class="data">Volvo XC90</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Fordonslag:</p>
+                                <p class="data">Personbil</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Artikel:</p>
+                                <p class="data">011</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Antal:</p>
+                                <p class="data">1</p>
+                            </div>
+                            <div class="unitData">
+                                <p class="heading">Pris:</p>
+                                <p class="data">5000:-</p>
+                            </div>
+                        </div>
+                            
+                    </div>    
+                    <div class="unitRow" onClick="document.getElementById('dialog').showModal()"> 
                         <img src="unitIcon.png"/>
                         
                         <div class="unitDataGrid">
@@ -123,7 +255,7 @@
                         </div>
                             
                     </div>    
-                    <div class="unitRow"> 
+                    <div class="unitRow" onClick="document.getElementById('dialog').showModal()"> 
                         <img src="unitIcon.png"/>
                         
                         <div class="unitDataGrid">
@@ -155,7 +287,7 @@
                         </div>
                             
                     </div>    
-                    <div class="unitRow"> 
+                    <div class="unitRow" onClick="document.getElementById('dialog').showModal()"> 
                         <img src="unitIcon.png"/>
                         
                         <div class="unitDataGrid">
@@ -186,38 +318,7 @@
                             </div>
                         </div>
                             
-                    </div>    
-                    <div class="unitRow"> 
-                        <img src="unitIcon.png"/>
-                        
-                        <div class="unitDataGrid">
 
-                            <div class="unitData">
-                                <p class="heading">Identitet:</p>
-                                <p class="data">Personbil 1</p>
-                            </div>
-                            <div class="unitData">
-                                <p class="heading">Modell:</p>
-                                <p class="data">Volvo XC90</p>
-                            </div>
-                            <div class="unitData">
-                                <p class="heading">Fordonslag:</p>
-                                <p class="data">Personbil</p>
-                            </div>
-                            <div class="unitData">
-                                <p class="heading">Artikel:</p>
-                                <p class="data">011</p>
-                            </div>
-                            <div class="unitData">
-                                <p class="heading">Antal:</p>
-                                <p class="data">1</p>
-                            </div>
-                            <div class="unitData">
-                                <p class="heading">Pris:</p>
-                                <p class="data">5000:-</p>
-                            </div>
-                        </div>
-                            
                     </div>    
 
 
