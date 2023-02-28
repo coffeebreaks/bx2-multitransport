@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <script>
+            function updateValue(value, parentClass){
+             
+            
+                let css = 'input[type="range"]::-webkit-slider-runnable-track { background-color: #D9D9D9 !important; transition: .5s; }';
+                const style = document.createElement('style');
+                style.type = 'text/css';
+                document.getElementsByTagName('head')[0].appendChild(style);
+                console.log(value)
+                switch(value){
+                    
+                    case '0':
+                    css = `.${parentClass} input[type="range"]::-webkit-slider-runnable-track { background-color: #D9D9D9 !important; transition: .5s; }`;
+                    break;
+                    
+                    case '1':
+                    css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: #219653 !important; transition: .5s; }`;
+                    break;
+                    
+                    case '2':
+                        css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: #47BCF4 !important; transition: .5s;}`;
+                        break;
+                        default:
+                            css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: gray !important; transition: .5s; }`;
+                            
+                        }
+                        
+                
+                
+                style.innerHTML = css;
+                 
+                
+
+            }
+
+        </script>    
+<style>
+
+body {
+    font-family: "Open Sans", "system-ui";
+}
+
+input[type="range"] {
+  -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+  -moz-apperance: none; /* Remove default appearance for Firefox */
+  appearance: none; /* Remove default appearance for other browsers */
+  width: 100%; /* Set the width to 100% of the parent container */
+  height: 10px; /* Set the height of the range slider */
+  background: transparent; /* Remove the default background */
+  outline: none; /* Remove the default focus outline */
+  border: none; /* Remove the default border */
+ 
+  transition: .5s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+  appearance: none; /* Remove default appearance for other browsers */
+  width: 20px; /* Set the width of the thumb */
+  height: 20px; /* Set the height of the thumb */
+  background: #ffffff7e; /* Set the background color of the thumb */
+  border-radius: 50%; /* Set the border radius of the thumb to make it round */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  transition: .5s;
+  /* margin-left: 10px;
+  margin-right: 100px; */
+}
+
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none; /* Remove default appearance for Firefox */
+  appearance: none; /* Remove default appearance for other browsers */
+  width: 20px; /* Set the width of the thumb */
+  
+  height: 20px; /* Set the height of the thumb */
+  background: #ffffff; /* Set the background color of the thumb */
+  border-radius: 50%; /* Set the border radius of the thumb to make it round */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  transition: .5s;
+}
+
+input[type="range"]::-webkit-slider-runnable-track  {
+  height: 20px; /* Set the height of the track */
+  background: #219653; /* Set the background color of the track */
+  background: #47BCF4; /* Set the background color of the track */
+  background: #D9D9D9; /* Set the background color of the track */
+  border-radius: 10px; /* Set the border radius of the track to make it round */
+  padding: 0 10px;
+  transition: .5s;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 10px; /* Set the height of the track */
+  background: #cccccc; /* Set the background color of the track */
+  border-radius: 5px; /* Set the border radius of the track to make it round */
+}
+
+.range {
+  
+
+}
+.roll-wrapper {
+    /* border: 1px solid black; */
+    /* max-width: 170px; */
+    
+}
+.label-grid {
+    /* border: 1px solid black; */
+
+    display: grid;
+    text-align: center;
+    font-size: 9px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.roll-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.station-name {
+    grid-area: 1/1/1/1;
+    font-size: 17px;
+}
+
+.station-coordinator {
+    /* grid-area: 2/2/2/2; */
+}
+
+.station-active {
+    /* grid-area: 3/3/1/1; */
+}
+
+.slider-wrapper {
+    grid-area: 1/2/3/4;
+}
+
+.activity-badge {
+    background-color: #219653;
+    border-radius: 5px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 10px;
+    color: white;
+    padding: .5rem;
+}
+</style>
+
+    <div class="row-wrapper">
+        
+        <div class="roll-wrapper">
+            
+            <div class="station-name">Göteborg</div>
+            <div class="station-cordinator">Koordinator: Marcus</div>
+            <div class="station-active">Aktiva bärgare: 4</div>
+            <div class="activity-badge">1 tim</div>
+            <div class="slider-wrapper">
+
+                <div class="slider1 range">
+                    <input type="range" min="0" max="2" value="0" class="slider1" id="myRange" onchange="updateValue(this.value, 'slider1')">
+                </div>
+                <div class="label-grid">
+                    <p>Ej Aktiv</p>
+                    <p>Bärgare</p>
+                    <p>Koordinator</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+  
+
+    
+</body>
+</html>
