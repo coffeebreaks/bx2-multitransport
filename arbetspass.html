@@ -9,31 +9,51 @@
 <body>
     
         <script>
-            function updateValue(value, parentClass){
-             
             
+            function updateValue(value, rowIndex){
+             
                 let css = 'input[type="range"]::-webkit-slider-runnable-track { background-color: #D9D9D9 !important; transition: .5s; }';
                 const style = document.createElement('style');
                 style.type = 'text/css';
                 document.getElementsByTagName('head')[0].appendChild(style);
                 console.log(value)
+                console.log(rowIndex)
                 switch(value){
                     
                     case '0':
-                    css = `.${parentClass} input[type="range"]::-webkit-slider-runnable-track { background-color: #D9D9D9 !important; transition: .5s; }`;
+                    css = `.slider${rowIndex} input[type="range"]::-webkit-slider-runnable-track { background-color: #D9D9D9 !important; transition: .5s; }`;
+                    document.getElementById(`station-name${rowIndex}`).classList.remove("green-text", "blue-text");
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.remove("green-border", "blue-border");
+                    //Clear classes
+                    document.getElementById(`station-name${rowIndex}`).classList.add("gray-text")
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.add("gray-border")
+
                     break;
                     
                     case '1':
-                    css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: #219653 !important; transition: .5s; }`;
+                    css = `.slider${rowIndex}  input[type="range"]::-webkit-slider-runnable-track { background-color: #219653 !important; transition: .5s; }`;
+                    document.getElementById(`station-name${rowIndex}`).classList.remove("gray-text", "blue-text");
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.remove("gray-border", "blue-border");
+                    //Clear classes
+                    document.getElementById(`station-name${rowIndex}`).classList.add("green-text")
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.add("green-border")
                     break;
                     
                     case '2':
-                        css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: #47BCF4 !important; transition: .5s;}`;
-                        break;
-                        default:
-                            css = `.${parentClass}  input[type="range"]::-webkit-slider-runnable-track { background-color: gray !important; transition: .5s; }`;
-                            
-                        }
+                    css = `.slider${rowIndex}  input[type="range"]::-webkit-slider-runnable-track { background-color: #47BCF4 !important; transition: .5s;}`;
+                    document.getElementById(`station-name${rowIndex}`).classList.add("blue-text")
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.add("blue-border")
+                    //Clear classes
+                    document.getElementById(`station-name${rowIndex}`).classList.remove("gray-text", "green-text");
+                    document.getElementById(`roll-wrapper${rowIndex}`).classList.remove("gray-border", "green-border");
+      
+                    break;
+                    
+                    default:
+
+                    css = `.slider${rowIndex}  input[type="range"]::-webkit-slider-runnable-track { background-color: gray !important; transition: .5s; }`;
+                        
+                }
                         
                 
                 
@@ -108,11 +128,7 @@ input[type="range"]::-moz-range-track {
   
 
 }
-.roll-wrapper {
-    /* border: 1px solid black; */
-    /* max-width: 170px; */
-    
-}
+
 .label-grid {
     /* border: 1px solid black; */
 
@@ -122,27 +138,71 @@ input[type="range"]::-moz-range-track {
     grid-template-columns: 1fr 1fr 1fr;
 }
 
+.label-grid p:first-of-type {
+    text-align: left;
+}
+
+.label-grid p:last-of-type {
+    text-align: right;
+}
 .roll-wrapper {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    max-width: 320px;
+    margin: 1rem 0;
+    padding-left: 1rem;
+
 }
 
 .station-name {
     grid-area: 1/1/1/1;
     font-size: 17px;
+    font-size: 24px;
+font-weight: 700;
 }
 
-.station-coordinator {
-    /* grid-area: 2/2/2/2; */
+.gray-text {
+    color: #696969;
+}
+.gray-border {
+    border-left: 10px solid #696969;
+}
+
+.blue-text {
+    color: #47BCF4;
+}
+.blue-border {
+    border-left: 10px solid #47BCF4;
+}
+.green-text {
+    color: #219653;
+}
+.green-border {
+    border-left: 10px solid #219653;
+}
+
+.station-cordinator {
+    display: flex;
+    flex-flow: row;
+    font-size: 14px;
+
+}
+
+.max-width-name {
+    margin-left: .5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 120px;
 }
 
 .station-active {
-    /* grid-area: 3/3/1/1; */
+    font-size: 14px;
 }
 
 .slider-wrapper {
-    grid-area: 1/2/3/4;
+    max-width: 200px;
 }
 
 .activity-badge {
@@ -152,30 +212,86 @@ input[type="range"]::-moz-range-track {
     height: fit-content;
     font-size: 10px;
     color: white;
-    padding: .5rem;
+    padding: .2rem;
+    margin-left: 1rem;
+ 
+}
+
+.inline-row {
+    display: flex;
+    flex-flow:row;
+    align-items: center;
+    
+}
+
+.station-bold {
+    font-weight: 700;
+    color: #696969;
+}
+
+.role {
+    margin: .5rem 0;
+    font-size: 12px;
 }
 </style>
 
     <div class="row-wrapper">
         
-        <div class="roll-wrapper">
-            
-            <div class="station-name">Göteborg</div>
-            <div class="station-cordinator">Koordinator: Marcus</div>
-            <div class="station-active">Aktiva bärgare: 4</div>
-            <div class="activity-badge">1 tim</div>
-            <div class="slider-wrapper">
+        <!-- ROW ID #1 -->
 
+        <div class="roll-wrapper gray-border" id="roll-wrapper1">
+            <div class="station-name gray-text" id="station-name1">Göteborg</div>
+            
+            <div class="inline-row">
+
+                <div class="station-cordinator"><span class="station-bold">Koordinator:</span> <div class="max-width-name">Johan Svensson Andersson</div></div>
+                <div class="activity-badge">1 tim</div>
+            </div>
+            <div class="station-active"><span class="station-bold">Aktiva bärgare:</span> 4</div>
+
+            <div class="slider-wrapper">
+                <div class="role">Roll:</div> 
                 <div class="slider1 range">
-                    <input type="range" min="0" max="2" value="0" class="slider1" id="myRange" onchange="updateValue(this.value, 'slider1')">
+                    <input type="range" min="0" max="2" value="0" class="slider1" id="myRange" onchange="updateValue(this.value, '1')">
                 </div>
+
                 <div class="label-grid">
                     <p>Ej Aktiv</p>
                     <p>Bärgare</p>
                     <p>Koordinator</p>
                 </div>
             </div>
+
         </div>
+ 
+        <!-- ROW ID #2 -->
+
+        
+        <div class="roll-wrapper gray-border" id="roll-wrapper2">  <!-- ID Här -->
+            <div class="station-name gray-text" id="station-name2">Göteborg</div>  <!-- ID Här -->
+            
+            <div class="inline-row">
+
+                <div class="station-cordinator"><span class="station-bold">Koordinator:</span> <div class="max-width-name">Johan Svensson Andersson</div></div>
+                <div class="activity-badge">1 tim</div>
+            </div>
+            <div class="station-active">Aktiva bärgare: 4</div>
+
+            <div class="slider-wrapper">
+                <div class="role">Roll:</div> 
+                <div class="slider2 range">  <!-- ID Här -->
+                    <input type="range" min="0" max="2" value="0" class="slider2" id="myRange" onchange="updateValue(this.value, '2')">  <!-- ID Här -->
+                </div>
+
+                <div class="label-grid">
+                    <p>Ej Aktiv</p>
+                    <p>Bärgare</p>
+                    <p>Koordinator</p>
+                </div>
+            </div>
+
+        </div>
+      
         
     </div>
 
