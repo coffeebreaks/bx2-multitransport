@@ -1,10 +1,15 @@
-#Order
--Link mobilityknapp order
--Span för gråa inputfält
-#Enheter multitransport
--Padding
--Gråa rader
-#Övrigt 
--Spinner
+# Order
 
- ~~Range arbetspass ~~
+- Link: `mobilityknapp order`
+- Span for gray input fields
+
+# Enheter multitransport
+
+- Padding
+- Gray rows
+
+# Övrigt
+
+- Spinner
+
+~~Range arbetspass~~
