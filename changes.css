@@ -128,3 +128,15 @@ font-size: 17px;
 font-family: "Open Sans";
 } */
 
+/* FIX FÖR ORDER */
+
+.job-order-inputfieldgroup {
+    width: 80px; 
+    
+}
+
+@media(max-width: 500px){
+    .job-order-inputfieldgroup {
+        width: 125px; 
+    } 
+}
